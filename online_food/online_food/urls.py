@@ -18,10 +18,18 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 
+
+from online_food_api import views
+from rest_framework.routers import DefaultRouter
+
+
+router = DefaultRouter()
+router.register('cat', views.CategoryViewSet, basename='cat_api')
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('food_api/', include('online_food_api.urls')),
-
+    path('viewset_api/', include(router.urls)),
 
 
 
