@@ -5,4 +5,4 @@ from .models import Category, Restaurant, Menu, Customer, Order, Reservation, Re
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ['category_name', 'description', 'created']
+        fields = ['id','category_name', 'description', 'created']
